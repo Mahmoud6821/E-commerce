@@ -1,6 +1,7 @@
 import mongoose from "../global-setup.js";
 const { Schema, model } = mongoose;
-import { hashSync } from "bcryptjs";
+import bcrypt from "bcryptjs";
+const {hashSync} = bcrypt
 
 const userSchema = new Schema(
   {

@@ -2,7 +2,8 @@
  * @api {POST} /users/create create new user
  */
 
-import { hashSync,compareSync ,compare} from "bcryptjs";
+import bcrypt from "bcryptjs";
+const { hashSync,compareSync ,compare} = bcrypt;
 import { User } from "../../../DB/Models/index.js";
 import { ErrorClass } from "../../Utils/index.js";
 import { Address } from "../../../DB/Models/index.js";
