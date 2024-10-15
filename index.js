@@ -26,14 +26,15 @@ app.use("/coupon", router.couponRouter);
 app.use("/order",router.orderRouter);
 app.use("/review",router.reviewRouter);
 
+app.get("/",(req,res)=>{
+    res.json({message:"Welcome to server page"});
+})
+
 app.use('*',(req,res,next)=>{
     //next({message:"Not Found",cause:404});
     res.status(404).json({message:"Not Found"})
 })
-app.get('/',(req,res,next)=>{
-    res.json({message:"Welcome to server page"});
-    next();
-})
+
 app.use(globaleResponse);
 db_connection();
 disableCouponsCron();
