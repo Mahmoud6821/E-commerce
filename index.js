@@ -30,8 +30,8 @@ app.use('*',(req,res,next)=>{
     //next({message:"Not Found",cause:404});
     res.status(404).json({message:"Not Found"})
 })
-app.use('/',(req,res,next)=>{
-    res.json({message:"Welcom to server page"});
+app.get('/',(req,res,next)=>{
+    res.json({message:"Welcome to server page"});
 })
 app.use(globaleResponse);
 db_connection();
