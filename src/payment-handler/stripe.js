@@ -26,7 +26,7 @@ export const createStripeCoupon = async ({ couponId }) => {
   
   const findCoupon = await Coupon.findById(couponId);
   if (!findCoupon) return res.stats(404).json({ message: "Coupon not found" });
-  
+
   let couponObject = {};
   if (findCoupon.couponType=="Amount") {
     couponObject = {
