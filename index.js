@@ -32,6 +32,7 @@ app.use('*',(req,res,next)=>{
 })
 app.get('/',(req,res,next)=>{
     res.json({message:"Welcome to server page"});
+    next();
 })
 app.use(globaleResponse);
 db_connection();
